@@ -1,0 +1,63 @@
+import yfinance as yf
+from stockstats import StockDataFrame as sdf
+import matplotlib.pyplot as plt
+import datetime
+import pandas as pd
+import plotly.express as px
+
+def Simple_Moving_Average(company_Ticker):
+    Stock_Name = yf.Ticker(company_Ticker)
+    historic_data=Stock_Name.history('1y','1d',datetime.datetime(2021,2,15),datetime.datetime(2021,5,15))
+    stock=sdf.retype(historic_data)
+    p=stock[close_10_sma]
+    return(p)
+    Stock_Name=yf.Ticker(RELIANCE.NS)#CHANGE COMPANY IF NEEDED
+    historic_data = Stock_Name.history('1y','1d',datetime.datetime(2021,2,15),datetime.datetime(2021,5,15))
+    p=pd.DataFrame(historic_data)
+    d=pd.DataFrame(p[Close])
+    c=list(Simple_Moving_Average(RELIANCE.NS))
+    d[Sma]=c
+    fig_3 = px.line(d)
+    fig_3.show()
+    stock=sdf.retype(historic_data)
+    p=stock[close_10_sma]
+    return(p)
+
+def Relative_Strength_Index(company_Ticker):
+    Stock_Name = yf.Ticker(company_Ticker)
+    historic_data =Stock_Name.history('1y','1d',datetime.datetime(2021,2,15),datetime.datetime(2021,5,15))
+    stock = sdf.retype(historic_data)
+    p=stock[rsi_14]
+    return(p)
+historic_data =Stock_Name.history('1y','1d',datetime.datetime(2021,2,15),datetime.datetime(2021,5,15))
+p=pd.DataFrame(historic_data)
+fig = px.line(Relative_Strength_Index(TCS.NS))
+fig.show()
+fig_3 = px.line(p[Close])
+fig_3.show()
+
+#MACD AND MACDS
+def Moving_Average_Convergence_Divergence(company_Ticker):
+    Stock_Name=yf.Ticker(company_Ticker)
+    historic_data=Stock_Name.history('1y','1d',datetime.datetime(2021,2,15),datetime.datetime(2021,5,15))
+    stock=sdf.retype(historic_data)
+    p=stock[macd]
+    return(p)
+
+Stock_Name=yf.Ticker(TCS.NS)#pricelinr
+historic_data =Stock_Name.history('1y','1d',datetime.datetime(2021,2,15),datetime.datetime(2021,5,15))
+p=pd.DataFrame(historic_data)
+
+fig_3 = px.line(p[Close])
+fig_3.show()
+def Signal_Line(company_Ticker):
+    Stock_Name=yf.Ticker(company_Ticker)
+    historic_data=Stock_Name.history('1y','1d',datetime.datetime(2021,2,15),datetime.datetime(2021,5,15))
+    stock=sdf.retype(historic_data)
+    p=stock[macds]
+    return(p)
+d=pd.DataFrame(Signal_Line(TCS.NS))
+c=list(Moving_Average_Convergence_Divergence(TCS.NS))
+d[Signalline]=c
+fig_3 = px.line(d)
+fig_3.show()
